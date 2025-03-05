@@ -1,0 +1,21 @@
+{
+  "name": "ditaik-website",
+  "version": "1.0.0",
+  "description": "Site web de Ditaik - Plateforme de Freelances Spécialisés",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/votre-utilisateur/ditaik-website.git"
+  },
+  "keywords": [
+    "freelance",
+    "data",
+    "intelligence artificielle"
+  ],
+  "author": "Ditaik",
+  "license": "UNLICENSED",
+  "private": true
+} 
