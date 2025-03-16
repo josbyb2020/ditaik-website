@@ -80,7 +80,7 @@ Le site est entièrement responsive et s'adapte à différentes tailles d'écran
 
 ## 📝 Licence
 
-© 2024 Ditaik. Tous droits réservés.
+© 2025 Ditaik. Tous droits réservés.
 
 ## 📞 Contact
 
