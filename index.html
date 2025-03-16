@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ditaik - Trouvez des freelances en un temps record! Spécialisés en Data et Intelligence Artificielle.">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob:; font-src * data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -33,22 +33,22 @@
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav aria-label="Navigation principale">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.html" aria-label="Accueil Ditaik">
                         <img src="assets/logo.png" alt="Ditaik Logo">
                     </a>
                 </div>
-                <div class="nav-toggle" id="navToggle">
+                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation">
                     <i class="fas fa-bars"></i>
                 </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Accueil</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Tarifs</a></li>
-                    <li class="nav-item"><a href="freelance.html" class="nav-link">Freelances Ditaik</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link contact-btn">Contact</a></li>
+                <ul class="nav-menu" id="navMenu" role="menu">
+                    <li class="nav-item" role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">Accueil</a></li>
+                    <li class="nav-item" role="none"><a href="about.html" class="nav-link" role="menuitem">À propos</a></li>
+                    <li class="nav-item" role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                    <li class="nav-item" role="none"><a href="pricing.html" class="nav-link" role="menuitem">Tarifs</a></li>
+                    <li class="nav-item" role="none"><a href="freelance.html" class="nav-link" role="menuitem">Freelances Ditaik</a></li>
+                    <li class="nav-item" role="none"><a href="contact.html" class="nav-link contact-btn" role="menuitem">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -151,7 +151,7 @@
                     <div class="link-column">
                         <h4>Contact</h4>
                         <ul class="contact-info">
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:ditaik000@gmail.com">ditaik000@gmail.com</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:contact@ditaik.org">contact@ditaik.org</a></li>
                             <li><i class="fas fa-phone"></i> <a href="tel:+33618474325">+33 6 18 47 43 25</a></li>
                             <li><i class="fas fa-map-marker-alt"></i> Paris, France</li>
                         </ul>
@@ -162,7 +162,7 @@
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/ditaik-entreprise-a2b287352/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <p class="copyright">© 2025 Ditaik. Tous droits réservés.</p>
+                <p class="copyright">© 2024 Ditaik. Tous droits réservés.</p>
             </div>
         </div>
     </footer>

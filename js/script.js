@@ -17,7 +17,9 @@ window.addEventListener('scroll', () => {
 
 // Mobile Navigation Toggle
 navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
     navMenu.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', !isExpanded);
     navToggle.querySelector('i').classList.toggle('fa-bars');
     navToggle.querySelector('i').classList.toggle('fa-times');
 });
@@ -26,6 +28,7 @@ navToggle.addEventListener('click', () => {
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
         navToggle.querySelector('i').classList.add('fa-bars');
         navToggle.querySelector('i').classList.remove('fa-times');
     });
@@ -35,6 +38,7 @@ navLinks.forEach(link => {
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
         navToggle.querySelector('i').classList.add('fa-bars');
         navToggle.querySelector('i').classList.remove('fa-times');
     }
@@ -169,4 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroImage) {
         heroImage.classList.add('zoom-in');
     }
+});
+
+// Update copyright year automatically
+document.addEventListener('DOMContentLoaded', () => {
+    const copyrightElements = document.querySelectorAll('.copyright');
+    const currentYear = new Date().getFullYear();
+    
+    copyrightElements.forEach(element => {
+        element.textContent = element.textContent.replace(/\d{4}/, currentYear);
+    });
 });

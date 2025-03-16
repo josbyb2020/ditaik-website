@@ -80,10 +80,10 @@ Le site est entièrement responsive et s'adapte à différentes tailles d'écran
 
 ## 📝 Licence
 
-© 2025 Ditaik. Tous droits réservés.
+© 2024 Ditaik. Tous droits réservés.
 
 ## 📞 Contact
 
 Pour toute question ou suggestion concernant ce projet, veuillez contacter :
-- Email : ditaik000@gmail.com
+- Email : contact@ditaik.org
 - Téléphone : +33 6 18 47 43 25 
