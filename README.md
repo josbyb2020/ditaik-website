@@ -4,12 +4,12 @@ Ditaik est une plateforme de mise en relation entre entreprises et freelances sp
 
 ## 📋 Version actuelle
 
-**Version 1.0.0** - Mars 2024
+**Version 1.0.0** - Mars 2025
 Pour plus de détails sur les changements, consultez le [CHANGELOG](CHANGELOG.md).
 
 ## 🔄 Mises à jour récentes
 
-- **Mars 2024** : Amélioration de la visibilité du logo
+- **Mars 2025** : Amélioration de la visibilité du logo
   - Augmentation de la taille du logo (250px)
   - Ajout d'un padding autour du logo
   - Ajout d'effets de survol (légère augmentation de taille et ombre portée)
