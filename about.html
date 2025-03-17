@@ -34,17 +34,17 @@
                         <img src="assets/logo.png" alt="Ditaik Logo">
                     </a>
                 </div>
-                <div class="nav-toggle" id="navToggle">
+                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation">
                     <i class="fas fa-bars"></i>
                 </div>
-                <div class="nav-menu">
-                    <p class="nav-item"><a href="index.html" class="nav-link">Accueil</a></p>
-                    <p class="nav-item"><a href="about.html" class="nav-link active">À propos</a></p>
-                    <p class="nav-item"><a href="services.html" class="nav-link">Services</a></p>
-                    <p class="nav-item"><a href="pricing.html" class="nav-link">Tarifs</a></p>
-                    <p class="nav-item"><a href="freelance.html" class="nav-link">Freelances Ditaik</a></p>
-                    <p class="nav-item"><a href="contact.html" class="nav-link contact-btn">Contact</a></p>
-                </div>
+                <ul class="nav-menu" id="navMenu" role="menu">
+                    <li class="nav-item" role="none"><a href="index.html" class="nav-link" role="menuitem">Accueil</a></li>
+                    <li class="nav-item" role="none"><a href="about.html" class="nav-link active" role="menuitem" aria-current="page">À propos</a></li>
+                    <li class="nav-item" role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                    <li class="nav-item" role="none"><a href="pricing.html" class="nav-link" role="menuitem">Tarifs</a></li>
+                    <li class="nav-item" role="none"><a href="freelance.html" class="nav-link" role="menuitem">Freelances Ditaik</a></li>
+                    <li class="nav-item" role="none"><a href="contact.html" class="nav-link contact-btn" role="menuitem">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -179,29 +179,27 @@
                 <div class="footer-links">
                     <div class="link-column">
                         <h4>Ditaik</h4>
-                        <div>
-                            <p><a href="about.html">À propos</a></p>
-                            <p><a href="services.html">Services</a></p>
-                            <p><a href="pricing.html">Tarifs</a></p>
-                            <p><a href="freelance.html">Freelances Ditaik</a></p>
-                            <p><a href="contact.html">Contact</a></p>
-                        </div>
+                        <ul>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="pricing.html">Tarifs</a></li>
+                            <li><a href="freelance.html">Freelances Ditaik</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
                     <div class="link-column">
                         <h4>Ressources</h4>
-                        <div>
-                            
-                            
-                            <p><a href="privacy.html">Confidentialité</a></p>
-                        </div>
+                        <ul>
+                            <li><a href="privacy.html">Confidentialité</a></li>
+                        </ul>
                     </div>
                     <div class="link-column">
                         <h4>Contact</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:contact@ditaik.org">contact@ditaik.org</a></p>
-                            <p><i class="fas fa-phone"></i> <a href="tel:+33618474325">+33 6 18 47 43 25</a></p>
-                            <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
-                        </div>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:contact@ditaik.org">contact@ditaik.org</a></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+33618474325">+33 6 18 47 43 25</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Paris, France</li>
+                        </ul>
                     </div>
                 </div>
             </div>
