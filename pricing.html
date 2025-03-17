@@ -123,6 +123,85 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
+        
+        /* Styles spécifiques pour le menu mobile */
+        @media screen and (max-width: 768px) {
+            .nav-toggle {
+                display: block !important;
+                font-size: 2.4rem !important;
+                color: #1a4fc0 !important;
+                position: relative !important;
+                margin-left: auto !important;
+                cursor: pointer !important;
+                z-index: 1001 !important;
+            }
+            
+            /* Animation de l'icône du hamburger */
+            .nav-toggle.active .hamburger-icon span:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+            
+            .nav-toggle.active .hamburger-icon span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+            
+            .nav-toggle.active .hamburger-icon span:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                width: 100%;
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        /* Style pour desktop */
+        @media screen and (min-width: 769px) {
+            .nav-toggle {
+                display: none !important;
+            }
+            
+            .nav-menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            
+            .nav-item {
+                margin-left: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -134,8 +213,12 @@
                         <img src="assets/logo.png" alt="Ditaik Logo">
                     </a>
                 </div>
-                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation">
-                    <i class="fas fa-bars"></i>
+                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation" style="display: block; font-size: 2.4rem; color: #1a4fc0; position: relative; margin-left: auto; cursor: pointer;">
+                    <div class="hamburger-icon" style="width: 25px; height: 20px; position: relative; margin: 0 auto;">
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 0;"></span>
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 8px;"></span>
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 16px;"></span>
+                    </div>
                 </div>
                 <ul class="nav-menu" id="navMenu" role="menu">
                     <li class="nav-item" role="none"><a href="index.html" class="nav-link" role="menuitem">Accueil</a></li>
@@ -259,5 +342,43 @@
     
     <!-- JavaScript avec intégrité et attributs de sécurité -->
     <script src="js/script.js"></script>
+    
+    <!-- Script dédié pour le menu mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                });
+                
+                // Fermeture du menu au clic sur un lien
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                
+                // Fermeture du menu au clic en dehors
+                document.addEventListener('click', function(e) {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

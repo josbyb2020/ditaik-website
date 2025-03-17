@@ -16,21 +16,21 @@ window.addEventListener('scroll', () => {
 });
 
 // Mobile Navigation Toggle
-navToggle.addEventListener('click', () => {
+navToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
     navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
     navToggle.setAttribute('aria-expanded', !isExpanded);
-    navToggle.querySelector('i').classList.toggle('fa-bars');
-    navToggle.querySelector('i').classList.toggle('fa-times');
 });
 
 // Close mobile menu when clicking on a nav link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.querySelector('i').classList.add('fa-bars');
-        navToggle.querySelector('i').classList.remove('fa-times');
     });
 });
 
@@ -38,9 +38,8 @@ navLinks.forEach(link => {
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.querySelector('i').classList.add('fa-bars');
-        navToggle.querySelector('i').classList.remove('fa-times');
     }
 });
 
@@ -86,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
             // Simple validation
             let isValid = true;
             const inputs = contactForm.querySelectorAll('input, textarea');
@@ -96,12 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (input.required && !input.value.trim()) {
                     isValid = false;
                     input.classList.add('error');
+                    e.preventDefault(); // Prevent form submission only if validation fails
                 } else if (input.type === 'email' && input.value.trim()) {
                     // Simple email validation
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(input.value.trim())) {
                         isValid = false;
                         input.classList.add('error');
+                        e.preventDefault(); // Prevent form submission only if validation fails
                     } else {
                         input.classList.remove('error');
                     }
@@ -110,33 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            if (isValid) {
-                // Here you would normally send the form data to a server
-                // For now, we'll just simulate a successful submission
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Envoi en cours...';
-                
-                setTimeout(() => {
-                    contactForm.reset();
-                    submitBtn.textContent = 'Envoyé avec succès!';
-                    
-                    // Show success message
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'form-success';
-                    successMessage.textContent = 'Votre message a été envoyé avec succès. Nous vous contacterons bientôt.';
-                    
-                    contactForm.appendChild(successMessage);
-                    
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                        successMessage.remove();
-                    }, 3000);
-                }, 1500);
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission if validation fails
             }
+            // If validation passes, the form will submit normally to Formspree
         });
         
         // Remove error class on input when user types
