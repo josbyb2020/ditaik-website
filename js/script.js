@@ -6,20 +6,6 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Détection iOS
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-// Force l'affichage du menu hamburger sur iOS
-if (isIOS && window.innerWidth <= 821) {
-    if (navToggle) {
-        navToggle.style.display = 'block';
-        navToggle.style.position = 'absolute';
-        navToggle.style.right = '20px';
-        navToggle.style.top = '20px';
-        navToggle.style.zIndex = '1001';
-    }
-}
-
 // Sticky Header on Scroll
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -29,7 +15,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Navigation Toggle avec conditions spéciales pour iOS
+// Mobile Navigation Toggle
 navToggle.addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -37,13 +23,6 @@ navToggle.addEventListener('click', function(e) {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
     navToggle.setAttribute('aria-expanded', !isExpanded);
-    
-    // Force le style inline pour iOS
-    if (isIOS && navMenu.classList.contains('active')) {
-        navMenu.style.right = '0';
-    } else if (isIOS) {
-        navMenu.style.right = '-100%';
-    }
 });
 
 // Close mobile menu when clicking on a nav link
@@ -52,11 +31,6 @@ navLinks.forEach(link => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
-        
-        // Force le style inline pour iOS
-        if (isIOS) {
-            navMenu.style.right = '-100%';
-        }
     });
 });
 
@@ -66,31 +40,6 @@ document.addEventListener('click', (e) => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
-        
-        // Force le style inline pour iOS
-        if (isIOS) {
-            navMenu.style.right = '-100%';
-        }
-    }
-});
-
-// Fonction de redimensionnement pour gérer les changements d'orientation
-window.addEventListener('resize', () => {
-    if (isIOS) {
-        if (window.innerWidth > 821) {
-            navToggle.style.display = 'none';
-            navMenu.style.display = 'flex';
-            navMenu.style.flexDirection = 'row';
-            navMenu.style.position = 'static';
-            navMenu.style.right = 'auto';
-        } else {
-            navToggle.style.display = 'block';
-            navMenu.style.flexDirection = 'column';
-            navMenu.style.position = 'fixed';
-            if (!navMenu.classList.contains('active')) {
-                navMenu.style.right = '-100%';
-            }
-        }
     }
 });
 

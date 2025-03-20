@@ -196,7 +196,6 @@ nav {
     height: 20px;
     position: relative;
     margin: 0 auto;
-    z-index: 1001;
 }
 
 .hamburger-icon span {
@@ -208,9 +207,7 @@ nav {
     border-radius: 3px;
     opacity: 1;
     left: 0;
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
 }
 
@@ -228,7 +225,6 @@ nav {
 
 .nav-toggle.active .hamburger-icon span:nth-child(1) {
     top: 8px;
-    -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
 }
 
@@ -239,7 +235,6 @@ nav {
 
 .nav-toggle.active .hamburger-icon span:nth-child(3) {
     top: 8px;
-    -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
 }
 
@@ -858,7 +853,7 @@ footer {
 }
 
 /* Styles pour desktop */
-@media screen and (min-width: 822px) {
+@media screen and (min-width: 769px) {
     .nav-toggle {
         display: none;
     }
@@ -868,63 +863,6 @@ footer {
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-    }
-}
-
-/* Styles pour mobile */
-@media screen and (max-width: 821px) {
-    .nav-toggle {
-        display: block !important;
-        position: relative;
-        z-index: 1001;
-    }
-
-    .hamburger-icon {
-        margin: 10px 0;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: calc(100vh - 80px);
-        background-color: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: var(--spacing-md);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
-        z-index: 1000;
-        -webkit-overflow-scrolling: touch;
-        overflow-y: visible;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-}
-
-/* Styles spécifiques pour iOS */
-@supports (-webkit-touch-callout: none) {
-    .nav-toggle {
-        display: block !important;
-        position: absolute !important;
-        right: 20px !important;
-        top: 20px !important;
-        z-index: 1001 !important;
-    }
-    
-    .hamburger-icon span {
-        background: #1a4fc0 !important;
-        height: 4px !important;
-    }
-    
-    @media screen and (min-width: 822px) {
-        .nav-toggle {
-            display: none !important;
-        }
     }
 }
 

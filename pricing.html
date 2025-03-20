@@ -2,11 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tarifs de Ditaik - Découvrez notre offre de lancement et notre modèle de tarification transparent pour la mise en relation entre entreprises et freelances.">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Ajout des en-têtes de sécurité -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -27,7 +26,7 @@
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.2">
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -214,11 +213,11 @@
                         <img src="assets/logo.png" alt="Ditaik Logo">
                     </a>
                 </div>
-                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation" style="display: block; position: relative; z-index: 1001;">
-                    <div class="hamburger-icon" style="width: 30px; height: 24px;">
-                        <span style="height: 4px; background-color: #1a4fc0;"></span>
-                        <span style="height: 4px; background-color: #1a4fc0;"></span>
-                        <span style="height: 4px; background-color: #1a4fc0;"></span>
+                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation" style="display: block; font-size: 2.4rem; color: #1a4fc0; position: relative; margin-left: auto; cursor: pointer;">
+                    <div class="hamburger-icon" style="width: 25px; height: 20px; position: relative; margin: 0 auto;">
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 0;"></span>
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 8px;"></span>
+                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 16px;"></span>
                     </div>
                 </div>
                 <ul class="nav-menu" id="navMenu" role="menu">
@@ -378,37 +377,6 @@
                         navToggle.setAttribute('aria-expanded', 'false');
                     }
                 });
-            }
-        });
-    </script>
-    
-    <!-- Script pour détecter iOS et adapter le menu -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Détecter iOS
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            
-            if (isIOS) {
-                // Appliquer des styles spécifiques pour iOS
-                var navToggle = document.getElementById('navToggle');
-                if (navToggle) {
-                    navToggle.style.display = 'block';
-                    navToggle.style.position = 'absolute';
-                    navToggle.style.right = '20px';
-                    navToggle.style.top = '20px';
-                    navToggle.style.zIndex = '1001';
-                    
-                    // S'assurer que le menu est visible sur les grands écrans iOS
-                    if (window.innerWidth > 821) {
-                        var navMenu = document.getElementById('navMenu');
-                        if (navMenu) {
-                            navMenu.style.display = 'flex';
-                            navMenu.style.flexDirection = 'row';
-                            navMenu.style.position = 'static';
-                            navToggle.style.display = 'none';
-                        }
-                    }
-                }
             }
         });
     </script>
