@@ -31,4 +31,4 @@ build/
 # Fichiers temporaires
 *.log
 *.tmp
-*.temp 
+*.temp *.DS_Store
