@@ -26,182 +26,10 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" href="css/pricing.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <style>
-        .pricing-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .pricing-content h2 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #1a4fc0;
-        }
-        
-        .pricing-content p, .pricing-content ul {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .pricing-content ul {
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-        
-        .pricing-content ul li {
-            margin-bottom: 10px;
-        }
-        
-        .pricing-highlight {
-            background-color: #f0f5ff;
-            border-left: 4px solid #1a4fc0;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .pricing-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin: 30px 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .pricing-card h3 {
-            color: #1a4fc0;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        
-        .pricing-card .price {
-            font-size: 32px;
-            font-weight: 700;
-            margin: 20px 0;
-            color: #333;
-        }
-        
-        .pricing-card .price-detail {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .pricing-note {
-            background-color: #fffbf0;
-            border-left: 4px solid #ff7846;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .pricing-icon {
-            font-size: 24px;
-            color: #1a4fc0;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        
-        .pricing-tag {
-            display: inline-block;
-            background-color: #ff7846;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        /* Styles spécifiques pour le menu mobile */
-        @media screen and (max-width: 768px) {
-            .nav-toggle {
-                display: block !important;
-                font-size: 2.4rem !important;
-                color: #1a4fc0 !important;
-                position: relative !important;
-                margin-left: auto !important;
-                cursor: pointer !important;
-                z-index: 1001 !important;
-            }
-            
-            /* Animation de l'icône du hamburger */
-            .nav-toggle.active .hamburger-icon span:nth-child(1) {
-                top: 8px;
-                transform: rotate(135deg);
-            }
-            
-            .nav-toggle.active .hamburger-icon span:nth-child(2) {
-                opacity: 0;
-                left: -60px;
-            }
-            
-            .nav-toggle.active .hamburger-icon span:nth-child(3) {
-                top: 8px;
-                transform: rotate(-135deg);
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: calc(100vh - 80px);
-                background-color: white;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                transition: right 0.3s ease;
-                z-index: 1000;
-                overflow-y: auto;
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-item {
-                width: 100%;
-                margin: 0;
-                padding: 10px 0;
-                border-bottom: 1px solid #e0e0e0;
-            }
-            
-            .nav-item:last-child {
-                border-bottom: none;
-            }
-        }
-        
-        /* Style pour desktop */
-        @media screen and (min-width: 769px) {
-            .nav-toggle {
-                display: none !important;
-            }
-            
-            .nav-menu {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                align-items: center;
-            }
-            
-            .nav-item {
-                margin-left: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -212,11 +40,11 @@
                         <img src="assets/logo.png" alt="Ditaik Logo">
                     </a>
                 </div>
-                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation" style="display: block; font-size: 2.4rem; color: #1a4fc0; position: relative; margin-left: auto; cursor: pointer;">
-                    <div class="hamburger-icon" style="width: 25px; height: 20px; position: relative; margin: 0 auto;">
-                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 0;"></span>
-                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 8px;"></span>
-                        <span style="display: block; position: absolute; height: 3px; width: 100%; background: #1a4fc0; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 16px;"></span>
+                <div class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu de navigation">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
                 <ul class="nav-menu" id="navMenu" role="menu">

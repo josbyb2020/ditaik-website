@@ -66,36 +66,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animate elements on scroll
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.story-content, .mission-card, .value-card, .team-member');
-        
+
         elements.forEach(el => {
             const position = el.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.2;
-            
+
             if (position < screenPosition) {
                 el.classList.add('animate-in');
             }
         });
     };
-    
-    // Add CSS class for animation
-    const style = document.createElement('style');
-    style.textContent = `
-        .story-content, .mission-card, .value-card, .team-member {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
-    document.head.appendChild(style);
-    
+
     // Run animation on scroll
     window.addEventListener('scroll', animateOnScroll);
-    
+
     // Run once on page load
     setTimeout(animateOnScroll, 300);
 }); 
