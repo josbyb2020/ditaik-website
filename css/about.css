@@ -470,4 +470,16 @@
     .step-content h3 {
         font-size: 18px;
     }
+}
+
+/* Animation Styles */
+.story-content, .mission-card, .value-card, .team-member {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 } 
