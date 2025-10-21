@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Message handling for iframe communication (if needed in the future)
         window.addEventListener('message', function(event) {
-            // Check if the message is from Google Forms
-            if (event.origin.includes('google.com')) {
+            // Check if the message is from Google Forms - STRICT origin validation
+            if (event.origin === 'https://docs.google.com') {
                 try {
                     const data = JSON.parse(event.data);
-                    
+
                     // Handle form submission success
                     if (data.type === 'form-submit-success') {
                         // Show success message or redirect
@@ -54,6 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Not a JSON message or other error
                     console.log('Message received but not processed');
                 }
+            }
+        });
+    }
+
+    // Smooth scroll to form section
+    const scrollToFormBtn = document.getElementById('scrollToFormBtn');
+    if (scrollToFormBtn) {
+        scrollToFormBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const formSection = document.querySelector('.form-container');
+            if (formSection) {
+                formSection.scrollIntoView({behavior: 'smooth'});
             }
         });
     }
