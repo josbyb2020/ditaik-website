@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollToFormBtn) {
         scrollToFormBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const formSection = document.querySelector('.form-container');
+            const formSection = document.getElementById('form-section');
             if (formSection) {
                 formSection.scrollIntoView({behavior: 'smooth'});
             }
