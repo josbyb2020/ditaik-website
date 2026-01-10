@@ -129,3 +129,4 @@ All new styles MUST use these CSS variables from `css/styles.css`:
 <!-- Add 1-3 line rules here when recurring issues are found -->
 - Mobile menu: always update `aria-expanded` on toggle
 - Form validation: check `required` AND custom validation (email pattern)
+- **Language**: All user-facing content must be in French (lang="fr")

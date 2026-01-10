@@ -9,6 +9,14 @@ Pour plus de détails sur les changements, consultez le [CHANGELOG](CHANGELOG.md
 
 ## Mises à jour récentes
 
+- **Janvier 2026** : Design moderne et professionnel
+  - Nouveau design avec dégradés élégants et effets visuels
+  - Animations fluides au défilement (scroll reveal)
+  - Cartes avec effets de survol modernes
+  - Section héro avec fond dégradé subtil
+  - Boutons avec dégradés et effets d'ombre
+  - Système de review automatisé (Claude Code)
+
 - **Octobre 2025** : Améliorations de sécurité
   - Ajout d'en-têtes de sécurité (CSP, X-Frame-Options, X-Content-Type-Options)
   - Externalisation de tous les scripts et styles inline
