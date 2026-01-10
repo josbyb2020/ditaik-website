@@ -25,7 +25,7 @@
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/styles.css?v=2.0">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -59,11 +59,17 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Gradient Mesh -->
         <section class="hero">
+            <!-- Animated Gradient Mesh Background -->
+            <div class="gradient-mesh" aria-hidden="true">
+                <div class="gradient-mesh__blob gradient-mesh__blob--1"></div>
+                <div class="gradient-mesh__blob gradient-mesh__blob--2"></div>
+                <div class="gradient-mesh__blob gradient-mesh__blob--3"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1>Trouvez des freelances en un temps record!</h1>
+                    <h1>Trouvez des freelances <span class="text-gradient">en un temps record!</span></h1>
                     <p>Connectez-vous avec des experts en Data et Intelligence Artificielle pour propulser votre entreprise vers l'avenir.</p>
                     <div class="hero-buttons">
                         <a href="services.html" class="btn btn-primary">Nos Services</a>
@@ -76,42 +82,69 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
+        <!-- Tech Stack Ticker -->
+        <section class="tech-ticker" aria-label="Technologies partenaires">
+            <span class="tech-ticker__label">Technologies</span>
+            <div class="tech-ticker__track">
+                <div class="tech-ticker__item"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-ticker__item"><i class="fas fa-brain"></i> Machine Learning</div>
+                <div class="tech-ticker__item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="tech-ticker__item"><i class="fas fa-database"></i> Big Data</div>
+                <div class="tech-ticker__item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tech-ticker__item"><i class="fas fa-chart-line"></i> Analytics</div>
+                <div class="tech-ticker__item"><i class="fab fa-google"></i> GCP</div>
+                <div class="tech-ticker__item"><i class="fas fa-robot"></i> IA Générative</div>
+                <div class="tech-ticker__item"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-ticker__item"><i class="fas fa-brain"></i> Machine Learning</div>
+                <div class="tech-ticker__item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="tech-ticker__item"><i class="fas fa-database"></i> Big Data</div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section - Bento Grid -->
         <section class="why-us">
             <div class="container">
                 <div class="section-header">
-                    <h2>Pourquoi Choisir Ditaik?</h2>
+                    <h2>Pourquoi Choisir <span class="text-gradient">Ditaik?</span></h2>
                     <p>Ce qui nous différencie des autres plateformes de freelance</p>
                 </div>
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">
+                <div class="bento-grid">
+                    <article class="bento-item bento-item--large reveal">
+                        <div class="bento-item__icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3>Rapidité</h3>
-                        <p>Trouvez des freelances qualifiés en un temps record grâce à notre processus de correspondance optimisé.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
+                        <div class="bento-item__content">
+                            <h3 class="bento-item__title">Rapidité</h3>
+                            <p class="bento-item__description">Trouvez des freelances qualifiés en un temps record grâce à notre processus de correspondance optimisé par l'IA.</p>
+                        </div>
+                    </article>
+                    <article class="bento-item reveal">
+                        <div class="bento-item__icon">
                             <i class="fas fa-check-circle"></i>
                         </div>
-                        <h3>Expertise Vérifiée</h3>
-                        <p>Tous nos freelances sont soigneusement évalués pour garantir le plus haut niveau d'expertise technique.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
+                        <div class="bento-item__content">
+                            <h3 class="bento-item__title">Expertise Vérifiée</h3>
+                            <p class="bento-item__description">Tous nos freelances sont soigneusement évalués pour garantir le plus haut niveau d'expertise technique.</p>
+                        </div>
+                    </article>
+                    <article class="bento-item reveal">
+                        <div class="bento-item__icon">
                             <i class="fas fa-handshake"></i>
                         </div>
-                        <h3>Relation de Confiance</h3>
-                        <p>Nous facilitons des collaborations transparentes et durables entre clients et freelances.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
+                        <div class="bento-item__content">
+                            <h3 class="bento-item__title">Confiance</h3>
+                            <p class="bento-item__description">Nous facilitons des collaborations transparentes et durables entre clients et freelances.</p>
+                        </div>
+                    </article>
+                    <article class="bento-item bento-item--wide reveal">
+                        <div class="bento-item__icon">
                             <i class="fas fa-lock"></i>
                         </div>
-                        <h3>Sécurité</h3>
-                        <p>Protection de vos données et transactions sécurisées pour une tranquillité d'esprit totale.</p>
-                    </div>
+                        <div class="bento-item__content">
+                            <h3 class="bento-item__title">Sécurité Totale</h3>
+                            <p class="bento-item__description">Protection de vos données et transactions sécurisées pour une tranquillité d'esprit totale. Vos informations sont protégées par des protocoles de sécurité de niveau entreprise.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
