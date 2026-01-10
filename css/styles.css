@@ -102,6 +102,29 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Global Focus Styles - Accessibility */
+:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(26, 79, 192, 0.4);
+}
+
+.nav-link:focus-visible {
+    outline-offset: 4px;
+}
+
 /* Header and Navigation */
 header {
     position: fixed;
