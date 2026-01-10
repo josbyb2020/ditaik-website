@@ -2,13 +2,13 @@
 
 /* Story Section */
 .story-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
 }
 
 .story-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: var(--spacing-lg);
 }
 
 .story-text {
@@ -16,23 +16,23 @@
 }
 
 .story-text p {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
     line-height: 1.8;
     color: var(--text-light);
 }
 
 .story-image {
     flex: 1;
-    border-radius: 10px;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .story-image img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: var(--transition);
 }
 
 .story-image:hover img {
@@ -41,29 +41,29 @@
 
 /* Mission & Vision Section */
 .mission-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--gray-light);
 }
 
 .mission-cards {
     display: flex;
-    gap: 30px;
-    margin-top: 50px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 .mission-card {
     flex: 1;
     background-color: var(--white);
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
 }
 
 .mission-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .card-icon {
@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin: 0 auto var(--spacing-md);
 }
 
 .card-icon i {
@@ -83,8 +83,8 @@
 }
 
 .mission-card h3 {
-    margin-bottom: 15px;
-    font-size: 24px;
+    margin-bottom: var(--spacing-sm);
+    font-size: 2.4rem;
     color: var(--text);
 }
 
@@ -95,27 +95,27 @@
 
 /* Process Section */
 .process-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--gray-light);
 }
 
 .process-subtitle {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    font-size: 22px;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-size: 2.2rem;
     font-weight: 600;
 }
 
 .process-intro {
-    margin-bottom: 30px;
-    font-size: 16px;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.6rem;
     max-width: 800px;
 }
 
 .process-steps {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0;
+    margin: var(--spacing-lg) 0;
     position: relative;
 }
 
@@ -126,14 +126,14 @@
     left: 10%;
     width: 80%;
     height: 3px;
-    background-color: #e0e0e0;
+    background-color: var(--gray);
     z-index: 1;
 }
 
 .process-step {
     flex: 1;
     text-align: center;
-    padding: 0 15px;
+    padding: 0 var(--spacing-sm);
     position: relative;
     z-index: 2;
     display: flex;
@@ -150,11 +150,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 28px;
+    margin: 0 auto var(--spacing-md);
+    font-size: 2.8rem;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .step-content {
@@ -162,54 +162,54 @@
 }
 
 .step-content h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: var(--spacing-xs);
+    font-size: 2rem;
 }
 
 .step-content p {
-    font-size: 15px;
+    font-size: 1.5rem;
     color: var(--text-light);
 }
 
 .process-highlight {
     background-color: rgba(26, 79, 192, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 0;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
     text-align: center;
 }
 
 .process-cta {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 /* Values Section */
 .values-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
 }
 
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 .value-card {
     background-color: var(--white);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
 }
 
 .value-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .value-icon {
@@ -220,17 +220,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto var(--spacing-md);
 }
 
 .value-icon i {
-    font-size: 28px;
+    font-size: 2.8rem;
     color: var(--primary);
 }
 
 .value-card h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+    font-size: 2rem;
     color: var(--text);
 }
 
@@ -241,28 +241,28 @@
 
 /* Team Section */
 .team-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--gray-light);
 }
 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 .team-member {
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
 }
 
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .member-image {
@@ -274,7 +274,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: var(--transition);
 }
 
 .team-member:hover .member-image img {
@@ -282,32 +282,32 @@
 }
 
 .member-info {
-    padding: 25px;
+    padding: var(--spacing-md);
     text-align: center;
 }
 
 .member-info h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-xs);
     color: var(--text);
 }
 
 .member-role {
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .member-bio {
     color: var(--text-light);
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
 }
 
 .member-social {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: var(--spacing-sm);
 }
 
 .member-social a {
@@ -319,7 +319,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: var(--transition);
 }
 
 .member-social a:hover {
@@ -329,7 +329,7 @@
 
 /* Stats Section */
 .stats-section {
-    padding: 80px 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--primary);
     color: var(--white);
 }
@@ -337,31 +337,31 @@
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: var(--spacing-md);
 }
 
 .stat-card {
     text-align: center;
-    padding: 20px;
+    padding: var(--spacing-md);
 }
 
 .stat-number {
-    font-size: 48px;
+    font-size: 4.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-xs);
     font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
-    font-size: 18px;
+    font-size: 1.8rem;
     opacity: 0.9;
 }
 
 /* CTA Section Modifications */
 .cta-buttons {
     display: flex;
-    gap: 20px;
-    margin-top: 30px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
     justify-content: center;
 }
 
@@ -370,28 +370,28 @@
     .story-content {
         flex-direction: column;
     }
-    
+
     .story-text, .story-image {
         width: 100%;
     }
-    
+
     .mission-cards {
         flex-direction: column;
     }
-    
+
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .process-steps::before {
         width: 70%;
         left: 15%;
     }
-    
+
     .step-number {
         width: 70px;
         height: 70px;
-        font-size: 24px;
+        font-size: 2.4rem;
     }
 }
 
@@ -399,45 +399,45 @@
     .team-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .cta-buttons {
         flex-direction: column;
     }
-    
+
     .process-steps {
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;
+        gap: var(--spacing-md);
     }
-    
+
     .process-steps::before {
         display: none;
     }
-    
+
     .process-step {
         flex-direction: row;
         text-align: left;
         width: 100%;
         padding: 0;
     }
-    
+
     .step-number {
-        margin: 0 20px 0 0;
+        margin: 0 var(--spacing-md) 0 0;
     }
-    
+
     .step-content {
         max-width: none;
     }
-    
+
     .process-cta {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .process-cta .btn {
         width: 100%;
         max-width: 300px;
@@ -448,27 +448,27 @@
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stat-card {
-        padding: 15px;
+        padding: var(--spacing-sm);
     }
-    
+
     .stat-number {
-        font-size: 36px;
+        font-size: 3.6rem;
     }
-    
+
     .stat-label {
-        font-size: 16px;
+        font-size: 1.6rem;
     }
-    
+
     .step-number {
         width: 60px;
         height: 60px;
-        font-size: 20px;
+        font-size: 2rem;
     }
-    
+
     .step-content h3 {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 }
 
@@ -482,4 +482,4 @@
 .animate-in {
     opacity: 1;
     transform: translateY(0);
-} 
+}
