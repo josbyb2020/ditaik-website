@@ -63,14 +63,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Animation on scroll for elements
 const animateElements = () => {
-    const elements = document.querySelectorAll('.fade-in, .slide-in, .zoom-in');
-    
+    const elements = document.querySelectorAll('.fade-in, .slide-in, .zoom-in, .reveal');
+
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight * 0.9) {
+
+        if (elementPosition < windowHeight * 0.85) {
             element.classList.add('visible');
+            element.classList.add('active');
         }
     });
 };
@@ -78,6 +79,15 @@ const animateElements = () => {
 // Initialize animations
 window.addEventListener('load', animateElements);
 window.addEventListener('scroll', animateElements);
+
+// Add reveal class to sections for scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section-header, .feature, .service-card, .cta-content');
+    sections.forEach((section, index) => {
+        section.classList.add('reveal');
+        section.style.transitionDelay = `${index * 0.1}s`;
+    });
+});
 
 // Form validation for contact form
 document.addEventListener('DOMContentLoaded', () => {
