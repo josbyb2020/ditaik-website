@@ -84,8 +84,16 @@ All new styles MUST use these CSS variables from `css/styles.css`:
 | Any HTML/CSS/JS change | `/verify-ui` |
 | UI component, styling, layout | `/ui-review` then `/ui-fix` if needed |
 | Interactive elements (forms, menus, modals) | `/a11y-review` |
-| New pages or navigation changes | `/e2e-review` |
-| Image-heavy or animation changes | `/perf-ui` |
+| JS changes, external links, forms | `/redteam` (security) |
+
+## Security Triggers (run /redteam when)
+
+- Adding/modifying JavaScript that handles user input
+- Adding external links (`target="_blank"`)
+- Adding forms or form handlers
+- Adding external scripts/CDN resources
+- Modifying CSP headers
+- Any change to `js/*.js` files
 
 ## Review Rubrics
 
@@ -108,6 +116,13 @@ All new styles MUST use these CSS variables from `css/styles.css`:
 2. **CSS** - Minimal, uses existing classes? No unused styles?
 3. **JS** - No unnecessary DOM queries? Events cleaned up?
 4. **Loading** - Critical CSS inline? Fonts preconnected?
+
+### Security Rubric (Static Sites)
+1. **XSS** - No innerHTML with user input? No eval()?
+2. **Links** - External links have rel="noopener noreferrer"?
+3. **CSP** - Content-Security-Policy headers present?
+4. **Secrets** - No API keys/tokens in JS files?
+5. **SRI** - CDN resources have integrity attribute?
 
 ## Learned Rules (add when patterns emerge)
 
