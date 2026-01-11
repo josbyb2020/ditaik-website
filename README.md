@@ -61,15 +61,16 @@ Pour plus de détails sur les changements, consultez le [CHANGELOG](CHANGELOG.md
 │   ├── services.css      # Styles de la page services
 │   ├── contact.css       # Styles de la page contact
 │   ├── freelance.css     # Styles de la page freelance
-│   └── pricing.css       # Styles de la page tarifs
+│   ├── pricing.css       # Styles de la page tarifs
+│   └── faq.css           # Styles de la page FAQ
 ├── js/                   # Fichiers JavaScript
 │   ├── script.js         # Script principal
 │   ├── about.js          # Script de la page à propos
 │   ├── services.js       # Script de la page services
-│   ├── contact.js        # Script de la page contact
 │   ├── freelance.js      # Script de la page freelance
 │   ├── pricing.js        # Script de la page tarifs
-│   └── file-structure.js # Script pour la structure des fichiers
+│   ├── faq.js            # Script de la page FAQ
+│   └── file-structure.txt # Documentation de la structure des fichiers
 ├── index.html            # Page d'accueil
 ├── about.html            # Page À propos
 ├── services.html         # Page Services

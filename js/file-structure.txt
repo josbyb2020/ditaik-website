@@ -8,11 +8,20 @@ project/
 ├── css/
 │   ├── reset.css               // Normalizes browser styles
 │   ├── styles.css              // Main styles for the entire website
-│   └── contact.css             // Specific styles for the contact page
+│   ├── about.css               // Styles for the about page
+│   ├── services.css            // Styles for the services page
+│   ├── contact.css             // Styles for the contact page
+│   ├── freelance.css           // Styles for the freelance page
+│   ├── pricing.css             // Styles for the pricing page
+│   └── faq.css                 // Styles for the FAQ page
 │
 ├── js/
 │   ├── script.js               // Main JavaScript for all pages
-│   └── contact.js              // Specific JavaScript for the contact page
+│   ├── about.js                // JavaScript for the about page
+│   ├── services.js             // JavaScript for the services page
+│   ├── freelance.js            // JavaScript for the freelance page
+│   ├── pricing.js              // JavaScript for the pricing page
+│   └── faq.js                  // JavaScript for the FAQ page
 │
 └── assets/                     // Directory for images and other media
     ├── logo.png                // The main Ditaik logo (create from your actual logo)
@@ -41,7 +50,7 @@ project/
 
 3. SECURITY IMPLEMENTATION:
    - Ensure the website uses HTTPS (set up SSL certificate)
-   - Implement proper form validation (already included in contact.js)
+   - Implement proper form validation (handled in script.js and page-specific JS files)
    - Add CSRF protection for forms
    - Consider adding rate limiting for form submissions
 
