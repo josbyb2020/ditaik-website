@@ -1,34 +1,34 @@
-# Guide de Versionnage pour Ditaik
+# Versioning Guide for Ditaik
 
-Ce document explique comment gérer les versions du site web Ditaik.
+This document explains how to manage versions of the Ditaik website.
 
-## Système de versionnage
+## Versioning System
 
-Nous utilisons le versionnage sémantique (SemVer) sous le format : **MAJEUR.MINEUR.CORRECTIF**
+We use semantic versioning (SemVer) in the format: **MAJOR.MINOR.PATCH**
 
-- **MAJEUR** : changements incompatibles avec les versions précédentes
-- **MINEUR** : ajout de fonctionnalités rétrocompatibles
-- **CORRECTIF** : corrections de bugs rétrocompatibles
+- **MAJOR**: Incompatible changes with previous versions
+- **MINOR**: Addition of backward-compatible features
+- **PATCH**: Backward-compatible bug fixes
 
-## Fichiers de versionnage
+## Versioning Files
 
-- **VERSION** : contient le numéro de version actuel
-- **CHANGELOG.md** : documente tous les changements par version
+- **VERSION**: Contains the current version number
+- **CHANGELOG.md**: Documents all changes by version
 
-## Processus pour une nouvelle version
+## Process for a New Version
 
-1. **Mettre à jour le fichier VERSION** avec le nouveau numéro de version
-2. **Mettre à jour CHANGELOG.md** avec les détails des changements
-3. **Committer les changements** :
+1. **Update the VERSION file** with the new version number
+2. **Update CHANGELOG.md** with details of the changes
+3. **Commit the changes**:
    ```
    git add VERSION CHANGELOG.md
-   git commit -m "Préparation de la version X.Y.Z"
+   git commit -m "Prepare version X.Y.Z"
    ```
-4. **Créer un tag** pour la nouvelle version :
+4. **Create a tag** for the new version:
    ```
-   git tag -a vX.Y.Z -m "Version X.Y.Z - Description courte"
+   git tag -a vX.Y.Z -m "Version X.Y.Z - Short description"
    ```
-5. **Pousser les changements et le tag** :
+5. **Push the changes and tag**:
    ```
    git push origin main
    git push origin vX.Y.Z
@@ -36,9 +36,9 @@ Nous utilisons le versionnage sémantique (SemVer) sous le format : **MAJEUR.MIN
 
 ## Branches
 
-- **main** : branche principale contenant la version de production
-- Des branches de fonctionnalités peuvent être créées pour des développements spécifiques
+- **main**: Main branch containing the production version
+- Feature branches can be created for specific developments
 
-## Historique
+## History
 
-L'historique du dépôt a été nettoyé le 5 mars 2024, avec la version 1.0.0 comme point de départ propre. Toutes les versions ultérieures suivront ce système de versionnage. 
+The repository history was cleaned on March 5, 2024, with version 1.0.0 as the clean starting point. All subsequent versions will follow this versioning system.

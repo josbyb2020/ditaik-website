@@ -39,13 +39,18 @@ project/
    - For hero-image.svg, create or purchase an illustration that relates to data, AI, or freelance work.
    - For testimonial images, use appropriate professional headshots or stock photos.
 
-2. ADDITIONAL PAGES TO CREATE:
+2. EXISTING PAGES:
+   - index.html: Homepage with main sections
    - about.html: Company history, mission, values, and team
    - services.html: Detailed information about your services
    - freelance.html: Information for freelancers who want to join
-   - blog.html: Company news and industry insights
-   - faq.html: Comprehensive FAQ page
+   - pricing.html: Pricing information
+   - contact.html: Contact page with form and info
    - privacy.html: Privacy policy
+
+3. FUTURE PAGES TO CREATE (optional):
+   - blog.html: Company news and industry insights
+   - faq.html: Comprehensive FAQ page (faq.js and faq.css already prepared)
    - terms.html: Terms and conditions
 
 3. SECURITY IMPLEMENTATION:

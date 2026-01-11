@@ -48,11 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Handle form submission success
                     if (data.type === 'form-submit-success') {
                         // Show success message or redirect
-                        console.log('Form submitted successfully');
+                        // Form submission handled by Google Forms
                     }
                 } catch (e) {
-                    // Not a JSON message or other error
-                    console.log('Message received but not processed');
+                    // Not a JSON message or other error - silently ignore
                 }
             }
         });

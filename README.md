@@ -1,117 +1,117 @@
-# Ditaik - Plateforme de Freelances Spécialisés
+# Ditaik - Specialized Freelance Platform
 
-Ditaik est une plateforme de mise en relation entre entreprises et freelances spécialisés dans les domaines de la Data et de l'Intelligence Artificielle.
+Ditaik is a platform connecting businesses with specialized freelancers in Data and Artificial Intelligence.
 
-## Version actuelle
+## Current Version
 
-**Version 1.0.0** - Mars 2025
-Pour plus de détails sur les changements, consultez le [CHANGELOG](CHANGELOG.md).
+**Version 1.2.0** - January 2025
+For more details on changes, see [CHANGELOG](CHANGELOG.md).
 
-## Mises à jour récentes
+## Recent Updates
 
-- **Janvier 2026** : Design moderne et professionnel
-  - Nouveau design avec dégradés élégants et effets visuels
-  - Animations fluides au défilement (scroll reveal)
-  - Cartes avec effets de survol modernes
-  - Section héro avec fond dégradé subtil
-  - Boutons avec dégradés et effets d'ombre
-  - Système de review automatisé (Claude Code)
+- **January 2026**: Modern and professional design
+  - New design with elegant gradients and visual effects
+  - Smooth scroll animations (scroll reveal)
+  - Cards with modern hover effects
+  - Hero section with subtle gradient background
+  - Buttons with gradients and shadow effects
+  - Automated review system (Claude Code)
 
-- **Octobre 2025** : Améliorations de sécurité
-  - Ajout d'en-têtes de sécurité (CSP, X-Frame-Options, X-Content-Type-Options)
-  - Externalisation de tous les scripts et styles inline
-  - Validation stricte des origines pour les messages cross-origin
-  - Séparation propre du code HTML, CSS et JavaScript
+- **October 2025**: Security improvements
+  - Added security headers (CSP, X-Frame-Options, X-Content-Type-Options)
+  - Externalized all inline scripts and styles
+  - Strict origin validation for cross-origin messages
+  - Clean separation of HTML, CSS and JavaScript code
 
-- **Mars 2025** : Amélioration de la visibilité du logo
-  - Augmentation de la taille du logo (250px)
-  - Ajout d'un padding autour du logo
-  - Ajout d'effets de survol (légère augmentation de taille et ombre portée)
-  - Transition fluide pour une meilleure expérience utilisateur
+- **March 2025**: Logo visibility improvements
+  - Increased logo size (250px)
+  - Added padding around the logo
+  - Added hover effects (slight size increase and drop shadow)
+  - Smooth transition for better user experience
 
-## Fonctionnalités
+## Features
 
-- Présentation détaillée des services de mise en relation
-- Formulaire de contact pour les entreprises
-- Inscription des freelances via Google Forms
-- Design responsive adapté à tous les appareils
-- Animations et interactions utilisateur modernes
-- En-têtes de sécurité robustes pour protéger les utilisateurs
+- Detailed presentation of matching services
+- Contact form for businesses
+- Freelancer registration via Google Forms
+- Responsive design adapted to all devices
+- Modern animations and user interactions
+- Robust security headers to protect users
 
-## Technologies Utilisées
+## Technologies Used
 
 - HTML5
-- CSS3 (avec variables CSS pour la cohérence visuelle)
+- CSS3 (with CSS variables for visual consistency)
 - JavaScript (Vanilla JS)
-- Google Forms (pour l'inscription des freelances)
+- Google Forms (for freelancer registration)
 
-## Structure du Projet
+## Project Structure
 
 ```
 /
-├── assets/               # Images et ressources
-│   ├── favicon_io/       # Favicon et icônes
-│   ├── logo.png          # Logo principal
-│   ├── favicon.png       # Favicon principal
-│   └── hero-image.svg    # Image d'en-tête
-├── css/                  # Fichiers CSS
-│   ├── reset.css         # Reset CSS
-│   ├── styles.css        # Styles principaux
-│   ├── about.css         # Styles de la page à propos
-│   ├── services.css      # Styles de la page services
-│   ├── contact.css       # Styles de la page contact
-│   ├── freelance.css     # Styles de la page freelance
-│   ├── pricing.css       # Styles de la page tarifs
-│   └── faq.css           # Styles de la page FAQ
-├── js/                   # Fichiers JavaScript
-│   ├── script.js         # Script principal
-│   ├── about.js          # Script de la page à propos
-│   ├── services.js       # Script de la page services
-│   ├── freelance.js      # Script de la page freelance
-│   ├── pricing.js        # Script de la page tarifs
-│   ├── faq.js            # Script de la page FAQ
-│   └── file-structure.txt # Documentation de la structure des fichiers
-├── index.html            # Page d'accueil
-├── about.html            # Page À propos
-├── services.html         # Page Services
-├── freelance.html        # Page d'inscription freelance
-├── pricing.html          # Page Tarifs
-└── contact.html          # Page Contact
+├── assets/               # Images and resources
+│   ├── favicon_io/       # Favicon and icons
+│   ├── logo.png          # Main logo
+│   ├── favicon.png       # Main favicon
+│   └── hero-image.svg    # Header image
+├── css/                  # CSS files
+│   ├── reset.css         # CSS reset
+│   ├── styles.css        # Main styles
+│   ├── about.css         # About page styles
+│   ├── services.css      # Services page styles
+│   ├── contact.css       # Contact page styles
+│   ├── freelance.css     # Freelance page styles
+│   ├── pricing.css       # Pricing page styles
+│   └── faq.css           # FAQ page styles
+├── js/                   # JavaScript files
+│   ├── script.js         # Main script
+│   ├── about.js          # About page script
+│   ├── services.js       # Services page script
+│   ├── freelance.js      # Freelance page script
+│   ├── pricing.js        # Pricing page script
+│   ├── faq.js            # FAQ page script
+│   └── file-structure.txt # File structure documentation
+├── index.html            # Homepage
+├── about.html            # About page
+├── services.html         # Services page
+├── freelance.html        # Freelancer registration page
+├── pricing.html          # Pricing page
+└── contact.html          # Contact page
 ```
 
-## Intégration avec Google Forms
+## Google Forms Integration
 
-Le site intègre un formulaire Google Forms pour l'inscription des freelances. Le formulaire est intégré via une iframe dans la page `freelance.html`.
+The site integrates a Google Forms form for freelancer registration. The form is embedded via an iframe on the `freelance.html` page.
 
-## Responsivité
+## Responsiveness
 
-Le site est entièrement responsive et s'adapte à différentes tailles d'écran :
-- Ordinateurs de bureau (> 992px)
-- Tablettes (768px - 992px)
+The site is fully responsive and adapts to different screen sizes:
+- Desktop computers (> 992px)
+- Tablets (768px - 992px)
 - Smartphones (576px - 768px)
-- Petits smartphones (< 576px)
+- Small smartphones (< 576px)
 
-## Palette de Couleurs
+## Color Palette
 
-- Couleur principale : Bleu royal (#1a4fc0)
-- Couleurs secondaires : Blanc (#ffffff), Gris clair (#f9f9f9), Gris foncé (#333333)
-- Accents : Bleu clair (#3a6edb), Orange (#ff7846)
+- Primary color: Royal blue (#1a4fc0)
+- Secondary colors: White (#ffffff), Light gray (#f9f9f9), Dark gray (#333333)
+- Accents: Light blue (#3a6edb), Orange (#ff7846)
 
-## Sécurité
+## Security
 
-Le site implémente plusieurs mesures de sécurité :
-- Content Security Policy (CSP) pour prévenir les attaques XSS
-- En-têtes X-Frame-Options pour protéger contre le clickjacking
-- En-têtes X-Content-Type-Options pour empêcher le MIME sniffing
-- Validation stricte des origines pour les communications cross-origin
-- Séparation complète du HTML, CSS et JavaScript
+The site implements several security measures:
+- Content Security Policy (CSP) to prevent XSS attacks
+- X-Frame-Options headers to protect against clickjacking
+- X-Content-Type-Options headers to prevent MIME sniffing
+- Strict origin validation for cross-origin communications
+- Complete separation of HTML, CSS and JavaScript
 
-## Licence
+## License
 
-© 2025 Ditaik. Tous droits réservés.
+© 2025 Ditaik. All rights reserved.
 
 ## Contact
 
-Pour toute question ou suggestion concernant ce projet, veuillez contacter :
-- Email : contact@ditaik.org
-- Téléphone : +33 6 18 47 43 25 
+For any questions or suggestions regarding this project, please contact:
+- Email: contact@ditaik.org
+- Phone: +33 6 18 47 43 25

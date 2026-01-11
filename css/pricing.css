@@ -134,7 +134,7 @@
     top: 16px;
 }
 
-/* Styles spécifiques pour le menu mobile */
+/* Specific styles for mobile menu */
 @media screen and (max-width: 768px) {
     .nav-toggle {
         display: block !important;
@@ -146,7 +146,7 @@
         z-index: 1001 !important;
     }
 
-    /* Animation de l'icône du hamburger */
+    /* Hamburger icon animation */
     .nav-toggle.active .hamburger-icon span:nth-child(1) {
         top: 8px;
         transform: rotate(135deg);

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Animation des éléments au scroll
+    // Animate elements on scroll
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.service-item, .process-step, .pricing-card');
         
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Ajouter la classe pour l'animation CSS
+    // Add class for CSS animation
     const serviceItems = document.querySelectorAll('.service-item');
     const processSteps = document.querySelectorAll('.process-step');
     const pricingCards = document.querySelectorAll('.pricing-card');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transitionDelay = `${index * 0.2}s`;
     });
     
-    // Fonction pour animer les éléments
+    // Function to animate elements
     const animateElements = function() {
         serviceItems.forEach(item => {
             item.style.opacity = '1';
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     };
     
-    // Exécuter l'animation après un court délai
+    // Execute animation after a short delay
     setTimeout(animateElements, 300);
     
-    // Smooth scroll pour les liens d'ancrage
+    // Smooth scroll for anchor links
     const scrollLinks = document.querySelectorAll('a[href^="#"]');
     
     scrollLinks.forEach(link => {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Effet de survol pour les cartes de fonctionnalités
+    // Hover effect for feature cards
     const featureItems = document.querySelectorAll('.feature-item');
     
     featureItems.forEach(item => {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navigation active au scroll
+    // Active navigation on scroll
     const sections = document.querySelectorAll('.services-main');
     
     window.addEventListener('scroll', function() {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Initialiser les animations au chargement
+    // Initialize animations on load
     animateOnScroll();
     window.addEventListener('scroll', animateOnScroll);
 }); 
