@@ -1,105 +1,133 @@
-# Ditaik — L'excellence data et IA
+# Ditaik
 
-A modern platform connecting businesses with specialized freelancers in Data and Artificial Intelligence.
+**Data & AI freelance platform.** Corporate site for Ditaik — connecting businesses with specialized freelancers in data engineering and artificial intelligence.
 
-## Tech Stack
+- **Stack:** [Astro](https://astro.build/) v5, [Tailwind CSS](https://tailwindcss.com/) v3, [React](https://react.dev/) (islands), [Framer Motion](https://www.framer.com/motion/)
+- **Content:** French; static generation with View Transitions
+- **Theme:** Class-based dark mode, OS preference, localStorage persistence
 
-- **Framework**: [Astro v5](https://astro.build/) — Static site generation with islands architecture
-- **Styling**: [Tailwind CSS v3](https://tailwindcss.com/) — Utility-first CSS with dark mode support
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) — React-based animations
-- **Theme**: Class-based dark mode with OS preference detection and localStorage persistence
+---
 
-## Features
+## Table of contents
 
-- 🌓 **Light/Dark Theme** — Respects OS preference with manual toggle
-- ⚡ **SPA-like Navigation** — ViewTransitions for smooth page transitions
-- 📱 **Fully Responsive** — Mobile-first design with glassmorphism menu
-- 🎨 **Premium Design** — Gradient backgrounds, spotlight effects, ambient glows
+- [Quick start](#quick-start)
+- [Project structure](#project-structure)
+- [Configuration](#configuration)
+- [Theme system](#theme-system)
+- [Deployment](#deployment)
+- [Documentation](#documentation)
+- [License & contact](#license--contact)
 
-## Getting Started
+---
+
+## Quick start
 
 ```bash
-# Install dependencies
+git clone https://github.com/josbyb2020/ditaik-website.git
+cd ditaik-website
 npm install
-
-# Start development server
 npm run dev
+```
 
-# Build for production
+Open [http://localhost:4321](http://localhost:4321). Production build:
+
+```bash
 npm run build
-
-# Preview production build
 npm run preview
 ```
 
-## Project Structure
+| Script     | Command        | Purpose                    |
+|-----------|----------------|----------------------------|
+| `dev`     | `astro dev`    | Dev server, hot reload     |
+| `build`   | `astro build`  | Output to `dist/`          |
+| `preview` | `astro preview`| Serve `dist/` locally       |
+
+---
+
+## Project structure
 
 ```
-/
-├── public/
+ditaik-website/
+├── public/                 # Static assets (copied as-is)
 │   └── assets/
-│       ├── favicon.png          # Optional fallback
-│       └── favicon_io/          # Canonical set (ico, 16, 32, 180, 192, 512, manifest)
+│       ├── favicon_io/      # Favicons (ico, 16, 32, 180, 192, 512, manifest)
+│       └── favicon.png     # Optional fallback
 ├── src/
 │   ├── components/
-│   │   ├── react/               # React islands (HeroAnimation, SpotlightCard)
-│   │   └── TechTicker.astro     # Scrolling tech strip
+│   │   ├── react/          # React islands (HeroAnimation, SpotlightCard)
+│   │   └── TechTicker.astro
 │   ├── layouts/
-│   │   └── Layout.astro         # Main layout (nav, footer, theme, skip link)
-│   ├── pages/
-│   │   ├── index.astro          # Homepage
-│   │   ├── services.astro       # Services page
-│   │   ├── about.astro          # About page
-│   │   ├── contact.astro        # Contact page
-│   │   └── freelance.astro      # Freelance sign-up (Google Form)
+│   │   └── Layout.astro    # Shell: nav, footer, theme toggle, skip link, mobile menu
+│   ├── pages/              # File-based routes
+│   │   ├── index.astro     # /
+│   │   ├── services.astro  # /services
+│   │   ├── freelance.astro # /freelance
+│   │   ├── about.astro     # /about
+│   │   └── contact.astro   # /contact
 │   └── styles/
-│       └── global.css           # Tailwind + focus + reduced-motion
+│       └── global.css      # Tailwind, focus, skip link, reduced motion
 ├── docs/
-│   └── UI-ARCHITECTURE-REVIEW.md  # Design and a11y review
+│   ├── README.md           # Documentation index
+│   └── ui-architecture-review.md  # Design system and accessibility
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── package.json
 ```
 
-## Branding
+---
 
-| Element | Value |
-|---------|-------|
-| Primary Font | Inter Tight |
-| Background (Light) | `#ffffff` |
-| Background (Dark) | `slate-950` (#020617) |
-| Accent Color | `#FF4400` (electric-500) |
-| Text Dark | `slate-900` |
-| Text Light | `slate-100` |
+## Configuration
 
-## Theme System
+- **Astro:** `astro.config.mjs` — React integration, Tailwind, View Transitions
+- **Tailwind:** `tailwind.config.mjs` — `darkMode: 'class'`, custom colors (`electric`, `slate`), Inter Tight font
+- **Environment:** No required env vars for build; optional `.env` for future server/API use
 
-The site uses class-based dark mode (`darkMode: 'class'` in Tailwind config):
+Design tokens (brand):
 
-1. **Initial load**: Inline script applies theme before render (no flash)
-2. **OS sync**: Listens to `prefers-color-scheme` changes in real-time
-3. **Manual toggle**: Sun/moon button in navbar
-4. **Persistence**: Preference saved to `localStorage`
+| Token        | Value        | Usage              |
+|-------------|--------------|--------------------|
+| Primary     | `#FF4400`    | Accent, CTAs, focus|
+| Background  | `slate-100` / `slate-950` | Light / dark       |
+| Font        | Inter Tight  | Body, headings     |
 
-## Documentation
+---
 
-- **Design and accessibility**: See [docs/UI-ARCHITECTURE-REVIEW.md](docs/UI-ARCHITECTURE-REVIEW.md) for the latest UI and a11y review.
+## Theme system
+
+Dark mode is class-based and applied on `<html>`:
+
+1. **Initial load:** Inline script in `<head>` runs before paint; reads `localStorage.theme` or `prefers-color-scheme` (no flash).
+2. **Toggle:** Navbar button (desktop + mobile menu) toggles `dark` class and writes `localStorage.theme`.
+3. **OS sync:** `matchMedia('prefers-color-scheme')` updates theme when the user has no stored preference.
+
+All UI uses Tailwind `dark:` variants; `global.css` sets CSS variables for body background/foreground.
+
+---
 
 ## Deployment
 
-The site builds to static HTML in `/dist` and can be deployed to any static host:
+Build output is static in `dist/`. Deploy that folder to any static host:
 
-```bash
-npm run build
-```
+- **Vercel / Netlify / Cloudflare Pages:** Connect repo; build command `npm run build`, output `dist/`
+- **Custom:** Upload `dist/` to your server; ensure redirects for SPA-like routes if needed (e.g. `/*` → `index.html` for client-side routing; Astro default is static HTML per route, so no special redirects required)
 
-Deploy the `dist/` folder to Vercel, Netlify, Cloudflare Pages, or any static host.
+---
 
-## License
+## Documentation
 
-© 2026 Ditaik. All rights reserved.
+Detailed project docs live in [`docs/`](docs/):
 
-## Contact
+| Document | Description |
+|----------|-------------|
+| [Documentation index](docs/README.md) | Overview of all docs |
+| [Design system and accessibility](docs/ui-architecture-review.md) | Design tokens, a11y conventions, component overview |
 
-- **Email**: contact@ditaik.org
-- **Location**: Paris, France
+For version history and release notes, see [CHANGELOG.md](CHANGELOG.md) and [VERSIONING.md](VERSIONING.md).
+
+---
+
+## License & contact
+
+- **License:** © 2026 Ditaik. All rights reserved.
+- **Email:** contact@ditaik.org  
+- **Location:** Paris, France

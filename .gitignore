@@ -13,6 +13,7 @@ desktop.ini
 # Project-specific (do not commit)
 CLAUDE.md
 .claude/
+_archive/
 
 # Dependencies
 node_modules/
