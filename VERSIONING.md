@@ -41,4 +41,4 @@ We use semantic versioning (SemVer) in the format: **MAJOR.MINOR.PATCH**
 
 ## History
 
-The repository history was cleaned on March 5, 2024, with version 1.0.0 as the clean starting point. All subsequent versions will follow this versioning system.
+The repository history was cleaned on March 5, 2024, with version 1.0.0 as the clean starting point. Version 3.0.0 is the major overhaul (Astro/Tailwind migration). All subsequent versions follow this versioning system.

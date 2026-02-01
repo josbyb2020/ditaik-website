@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --color-background: 241 245 249;
+    /* slate-100 */
+    --color-foreground: 15 23 42;
+    /* slate-900 */
+    --color-muted: 100 116 139;
+    /* slate-500 */
+    --color-card: 255 255 255;
+    /* white */
+    --color-border: 226 232 240;
+    /* slate-200 */
+  }
+
+  .dark {
+    /* Dark theme colors */
+    --color-background: 2 6 23;
+    /* slate-950 */
+    --color-foreground: 248 250 252;
+    /* slate-50 */
+    --color-muted: 148 163 184;
+    /* slate-400 */
+    --color-card: 15 23 42;
+    /* slate-900 */
+    --color-border: 51 65 85;
+    /* slate-700 */
+  }
+
+  html {
+    font-family: 'Inter Tight', sans-serif;
+    @apply scroll-smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Focus visibility for keyboard users (WCAG 2.4.7) */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #FF4400;
+    outline-offset: 2px;
+  }
+
+  /* Skip link: off-screen until focused */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0.5rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: #FF4400;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: left 0.2s ease;
+  }
+  .skip-link:focus {
+    left: 0.5rem;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  /* Respect reduced motion (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

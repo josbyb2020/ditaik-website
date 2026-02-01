@@ -1,0 +1,28 @@
+---
+const techs = [
+    "Python",
+    "Machine learning",
+    "AWS",
+    "Big data",
+    "Docker",
+    "Analytics",
+    "GCP",
+    "IA générative",
+    "Spark",
+    "Kubernetes",
+    "Tableau",
+    "Power BI",
+];
+// Duplicate for seamless loop
+const allTechs = [...techs, ...techs, ...techs];
+---
+
+<div class="w-full bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm border-y border-slate-200 dark:border-white/5 py-8 overflow-hidden relative group" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+    <div class="flex animate-infinite-scroll w-max gap-12 group-hover:[animation-play-state:paused]">
+        {allTechs.map((tech) => (
+            <span class="font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-default whitespace-nowrap text-lg tracking-tight">
+                {tech}
+            </span>
+        ))}
+    </div>
+</div>

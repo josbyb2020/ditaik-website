@@ -1,10 +1,14 @@
 {
   "name": "ditaik-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Site web de Ditaik - Plateforme de Freelances Spécialisés",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -13,9 +17,21 @@
   "keywords": [
     "freelance",
     "data",
-    "intelligence artificielle"
+    "intelligence artificielle",
+    "astro"
   ],
   "author": "Ditaik",
   "license": "UNLICENSED",
-  "private": true
-} 
+  "private": true,
+  "dependencies": {
+    "@astrojs/react": "^4.0.0",
+    "@astrojs/tailwind": "^6.0.0",
+    "astro": "^5.0.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.1"
+  }
+}

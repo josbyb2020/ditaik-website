@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpotlightCard from '../components/react/SpotlightCard';
+
+const values = [
+    {
+        title: "Excellence technique",
+        description: "Nous sélectionnons rigoureusement les meilleurs talents en data et IA pour garantir des résultats exceptionnels.",
+        num: "01"
+    },
+    {
+        title: "Transparence",
+        description: "Une communication claire et honnête avec nos clients et nos freelances, de la première discussion à la livraison.",
+        num: "02"
+    },
+    {
+        title: "Innovation continue",
+        description: "Nous restons à la pointe des technologies data et IA pour proposer des solutions toujours plus performantes.",
+        num: "03"
+    }
+];
+
+const stats = [
+    { value: "50+", label: "Experts qualifiés" },
+    { value: "100%", label: "Satisfaction client" },
+    { value: "48h", label: "Temps de réponse" }
+];
+---
+
+<Layout title="À propos — Ditaik">
+    <div class="pt-32 pb-20 relative overflow-hidden">
+        <!-- Background decor (dark mode only) -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-electric-500/5 blur-[120px] rounded-full pointer-events-none hidden dark:block"></div>
+
+        <div class="container mx-auto px-6">
+            <!-- Hero -->
+            <div class="max-w-3xl mb-24">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+                    À propos de <span class="text-electric-500">Ditaik</span>
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Nous connectons les entreprises avec des experts passionnés en data et intelligence artificielle. Notre mission : accélérer votre transformation digitale avec les meilleurs talents.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+                {stats.map((stat) => (
+                    <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 rounded-3xl p-8 text-center shadow-sm dark:shadow-none">
+                        <div class="text-5xl font-black text-electric-500 mb-2">{stat.value}</div>
+                        <div class="text-slate-600 dark:text-slate-400">{stat.label}</div>
+                    </div>
+                ))}
+            </div>
+
+            <!-- Mission -->
+            <div class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-white">Notre <span class="text-electric-500">mission</span></h2>
+                <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                        Ditaik est née d'un constat simple : les entreprises peinent à trouver des experts qualifiés en data et IA, tandis que des freelances talentueux cherchent des missions à la hauteur de leur expertise.
+                    </p>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Nous avons créé une plateforme qui met en relation ces deux mondes. Notre équipe sélectionne rigoureusement chaque freelance pour garantir un niveau d'excellence constant. Résultat : des projets livrés dans les temps, avec une qualité irréprochable.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-slate-900 dark:text-white">Nos <span class="text-electric-500">valeurs</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {values.map((value) => (
+                        <SpotlightCard client:visible className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 rounded-3xl p-8 hover:border-electric-500/30 transition-all duration-500 group shadow-sm dark:shadow-none h-full">
+                            <div class="relative z-10 h-full flex flex-col">
+                                <span class="text-5xl font-black text-slate-100 dark:text-white/5 select-none mb-4">{value.num}</span>
+                                <h3 class="text-xl font-bold mb-3 group-hover:text-electric-500 transition-colors text-slate-900 dark:text-white">{value.title}</h3>
+                                <p class="text-slate-600 dark:text-slate-400">{value.description}</p>
+                            </div>
+                        </SpotlightCard>
+                    ))}
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-gradient-to-r from-electric-500/10 to-blue-500/10 border border-electric-500/20 rounded-3xl p-8 md:p-12 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Prêt à collaborer ?</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-2xl mx-auto">
+                    Que vous cherchiez des talents ou des missions, nous avons la solution pour vous.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact" class="px-8 py-4 bg-electric-500 text-white font-bold rounded-full hover:bg-electric-600 transition-colors shadow-glow">
+                        Trouver des talents
+                    </a>
+                    <a href="/freelance" class="px-8 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold rounded-full hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                        Devenir freelance
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

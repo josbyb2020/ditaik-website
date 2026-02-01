@@ -1,34 +1,40 @@
-# Fichiers système
+# System
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Fichiers d'éditeurs
+# Editors / IDE
 .idea/
 .vscode/
+.cursor/
 *.sublime-project
 *.sublime-workspace
 
-# Dépendances
+# Project-specific (do not commit)
+CLAUDE.md
+.claude/
+
+# Dependencies
 node_modules/
 npm-debug.log
 yarn-error.log
 package-lock.json
 yarn.lock
 
-# Fichiers de build
+# Build
 dist/
 build/
 .cache/
+.astro/
 
-# Fichiers d'environnement
+# Environment
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Fichiers temporaires
+# Temp
 *.log
 *.tmp
-*.temp *.DS_Store
+*.temp

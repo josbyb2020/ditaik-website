@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpotlightCard from '../components/react/SpotlightCard';
+
+const benefits = [
+    {
+        title: "Projets stimulants",
+        description: "Accédez à des missions variées et challengeantes auprès d'entreprises innovantes dans tous les secteurs d'activité.",
+        num: "01"
+    },
+    {
+        title: "Rémunération attractive",
+        description: "Bénéficiez de tarifs compétitifs qui valorisent justement votre expertise et votre expérience.",
+        num: "02"
+    },
+    {
+        title: "Flexibilité totale",
+        description: "Gérez votre emploi du temps selon vos disponibilités et choisissez les projets qui vous correspondent.",
+        num: "03"
+    }
+];
+---
+
+<Layout title="Freelances — Ditaik">
+    <div class="pt-32 pb-20 relative overflow-hidden">
+        <!-- Background decor (dark mode only) -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-electric-500/5 blur-[120px] rounded-full pointer-events-none hidden dark:block"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mb-16">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+                    Rejoignez notre <span class="text-electric-500">réseau</span>
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Mettez votre expertise en Data et Intelligence Artificielle au service de projets passionnants.
+                </p>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="mb-20">
+                <h2 class="text-3xl font-bold mb-12 text-slate-900 dark:text-white">Pourquoi rejoindre <span class="text-electric-500">Ditaik</span> ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {benefits.map((benefit) => (
+                        <SpotlightCard client:visible className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 rounded-3xl p-8 hover:border-electric-500/30 transition-all duration-500 group shadow-sm dark:shadow-none h-full">
+                            <div class="relative z-10 h-full flex flex-col">
+                                <span class="text-5xl font-black text-slate-100 dark:text-white/5 select-none mb-4">{benefit.num}</span>
+                                <h3 class="text-xl font-bold mb-3 group-hover:text-electric-500 transition-colors text-slate-900 dark:text-white">{benefit.title}</h3>
+                                <p class="text-slate-600 dark:text-slate-400">{benefit.description}</p>
+                            </div>
+                        </SpotlightCard>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Google Form Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Formulaire d'inscription</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">
+                    Complétez le formulaire ci-dessous pour rejoindre notre réseau de freelances
+                </p>
+                <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 rounded-3xl p-4 shadow-sm overflow-hidden">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSersdLdrg0Pykv1eS1HUkpqV5Usp5DQZjK78nUUBon3PtuY6Q/viewform?embedded=true" 
+                        width="100%" 
+                        height="900" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="rounded-2xl"
+                        title="Formulaire d'inscription freelance"
+                    >
+                        Chargement…
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center py-12">
+                <p class="text-slate-600 dark:text-slate-400 mb-4">Des questions sur le processus d'inscription ?</p>
+                <a href="/contact" class="text-electric-500 font-semibold hover:underline">
+                    Contactez-nous →
+                </a>
+            </div>
+        </div>
+    </div>
+</Layout>

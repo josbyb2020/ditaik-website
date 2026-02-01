@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpotlightCard from '../components/react/SpotlightCard';
+
+const services = [
+    {
+        title: "Ingénierie des données",
+        description: "Construisez des pipelines robustes et évolutifs pour gérer des pétaoctets de données.",
+        num: "01",
+        colSpan: "col-span-1 md:col-span-2"
+    },
+    {
+        title: "Machine learning",
+        description: "Modèles prédictifs et solutions de deep learning adaptés à votre entreprise.",
+        num: "02",
+        colSpan: "col-span-1"
+    },
+    {
+        title: "IA générative et LLMs",
+        description: "Pipelines RAG personnalisés, fine-tuning et développement d'applications LLM.",
+        num: "03",
+        colSpan: "col-span-1"
+    },
+    {
+        title: "Architecture cloud",
+        description: "Infrastructure AWS, GCP et Azure optimisée spécifiquement pour les charges de travail data.",
+        num: "04",
+        colSpan: "col-span-1 md:col-span-2"
+    },
+    {
+        title: "Business intelligence",
+        description: "Transformez les données brutes en insights actionnables avec Tableau, Power BI et Looker.",
+        num: "05",
+        colSpan: "col-span-1"
+    },
+     {
+        title: "Stratégie data",
+        description: "Roadmapping et conseil pour aligner les initiatives data avec les objectifs business.",
+        num: "06",
+        colSpan: "col-span-1"
+    }
+];
+
+const processSteps = [
+    { title: "Découverte", desc: "Analyse approfondie de vos besoins techniques.", num: "01" },
+    { title: "Matching", desc: "Identification des profils les plus pertinents.", num: "02" },
+    { title: "Exécution", desc: "Lancement rapide de la mission.", num: "03" }
+];
+---
+
+<Layout title="Services — Ditaik">
+    <div class="pt-32 pb-20 relative overflow-hidden">
+        <!-- Background decor -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-electric-500/5 blur-[120px] rounded-full pointer-events-none hidden dark:block"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mb-24">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+                    Notre <span class="text-electric-500">expertise</span>
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Nous vous accompagnons sur l'ensemble du cycle de vie des données. De l'architecture à l'insight, collaborez avec des spécialistes dédiés à votre réussite.
+                </p>
+            </div>
+
+            <!-- Bento grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+                {services.map((service) => (
+                    <SpotlightCard client:visible className={`bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 rounded-3xl p-8 hover:border-electric-500/30 transition-all duration-500 hover:-translate-y-1 ${service.colSpan} group shadow-sm dark:shadow-none`}>
+                        <div class="relative z-10 h-full flex flex-col justify-between">
+                            <span class="text-5xl font-black text-slate-100 dark:text-white/5 select-none">{service.num}</span>
+                            
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2 group-hover:text-electric-500 transition-colors text-slate-900 dark:text-white">{service.title}</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">{service.description}</p>
+                            </div>
+                        </div>
+                    </SpotlightCard>
+                ))}
+            </div>
+
+            <!-- Process section -->
+            <div class="mt-40">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-slate-900 dark:text-white">De la data à la valeur en <span class="text-electric-500">3 étapes</span></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {processSteps.map((step) => (
+                         <div class="relative p-8 border-l border-slate-200 dark:border-white/10 hover:border-electric-500 transition-colors duration-300 pl-8">
+                            <span class="text-6xl font-black text-slate-100 dark:text-white/5 absolute -top-4 left-4 select-none">{step.num}</span>
+                            <h3 class="text-xl font-bold mb-2 relative z-10 text-slate-900 dark:text-white">{step.title}</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm relative z-10">{step.desc}</p>
+                         </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
