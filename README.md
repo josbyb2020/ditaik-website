@@ -1,6 +1,6 @@
 # Ditaik
 
-**Data & AI freelance platform.** Corporate site for Ditaik — connecting businesses with specialized freelancers in data engineering and artificial intelligence.
+**Data & AI freelance platform.** Corporate site for Ditaik, connecting businesses with specialized freelancers in data engineering and artificial intelligence.
 
 - **Stack:** [Astro](https://astro.build/) v5, [Tailwind CSS](https://tailwindcss.com/) v3, [React](https://react.dev/) (islands), [Framer Motion](https://www.framer.com/motion/)
 - **Content:** French; static generation with View Transitions
@@ -78,8 +78,8 @@ ditaik-website/
 
 ## Configuration
 
-- **Astro:** `astro.config.mjs` — React integration, Tailwind, View Transitions
-- **Tailwind:** `tailwind.config.mjs` — `darkMode: 'class'`, custom colors (`electric`, `slate`), Inter Tight font
+- **Astro:** `astro.config.mjs`, React integration, Tailwind, View Transitions
+- **Tailwind:** `tailwind.config.mjs`, `darkMode: 'class'`, custom colors (`electric`, `slate`), Inter Tight font
 - **Environment:** No required env vars for build; optional `.env` for future server/API use
 
 Design tokens (brand):
